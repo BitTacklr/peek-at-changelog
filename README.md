@@ -1,6 +1,6 @@
 # Peek At Changelog
 
-Allows one to extract the release notes from a changelog, think `CHANGELOG.md` according to the https://keepachangelog.com format, for a particular version or fallback to the `Unreleased` notes if none specified or no matching version found. How you compose the changelog is out of scope. What you do with the output of the tool is out of scope.
+Allows one to extract the release notes from a changelog, think `CHANGELOG.md` according to the https://keepachangelog.com format, for a particular version or fallback to the `Unreleased` notes if none specified. How you compose the changelog is out of scope. What you do with the output of the tool is out of scope.
 
 ## Installation
 
