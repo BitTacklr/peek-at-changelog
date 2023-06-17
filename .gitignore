@@ -1,0 +1,10 @@
+.artifacts
+.idea
+.vscode
+
+bin
+obj
+
+*.user
+
+TryOutPeekAtChangelog/TestResults/tests.trx

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PeekAtChangelog", "PeekAtChangelog\PeekAtChangelog.fsproj", "{8016657A-3266-4D94-BE18-A82F393D9A78}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TryOutPeekAtChangelog", "TryOutPeekAtChangelog\TryOutPeekAtChangelog.fsproj", "{E86BAB4C-451F-4DEA-9A79-B53679272C80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8016657A-3266-4D94-BE18-A82F393D9A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8016657A-3266-4D94-BE18-A82F393D9A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8016657A-3266-4D94-BE18-A82F393D9A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8016657A-3266-4D94-BE18-A82F393D9A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86BAB4C-451F-4DEA-9A79-B53679272C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86BAB4C-451F-4DEA-9A79-B53679272C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86BAB4C-451F-4DEA-9A79-B53679272C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86BAB4C-451F-4DEA-9A79-B53679272C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

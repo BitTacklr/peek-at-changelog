@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>PeekAtChangelog</RootNamespace>
+        <PackageId>PeekAtChangelog</PackageId>
+        <Authors>Yves Reynhout</Authors>
+        <Copyright>BitTacklr 2023</Copyright>
+        <RepositoryUrl>https://github.com/BitTacklr/peek-at-changelog</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Company>BitTacklr</Company>
+        <Product>PeekAtChangelog</Product>
+        <PackageLicenseUrl>https://github.com/BitTacklr/peek-at-changelog/blob/main/LICENSE</PackageLicenseUrl>
+        <IsPackable>true</IsPackable>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageReleaseNotes>https://github.com/BitTacklr/peek-at-changelog/blob/main/CHANGELOG</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
+        <MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Compile Include="ChangelogReleaseNotesSeeker.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Argu" Version="6.1.1" />
+      <PackageReference Include="Markdig" Version="0.31.0" />
+      <PackageReference Include="MinVer" Version="5.0.0-alpha.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>

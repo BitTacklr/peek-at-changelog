@@ -1,0 +1,15 @@
+ci:
+	dotnet tool restore
+	dotnet restore
+	dotnet build --configuration Release --no-restore -v=d
+	dotnet test --configuration Release --no-build --no-restore TryOutPeekAtChangelog --logger "trx;logfilename=tests.trx"
+
+cd:
+	dotnet tool restore
+	dotnet restore
+	dotnet build --configuration Release --no-restore
+	dotnet pack --configuration Release --no-build --no-restore --include-symbols --include-source PeekAtChangelog/PeekAtChangelog.csproj -o .artifacts/
+	dotnet nuget push .artifacts/*.nupkg --api-key $(NUGET_APIKEY) --source https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
+
+format:
+	dotnet fantomas .
