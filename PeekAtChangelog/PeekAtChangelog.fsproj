@@ -5,16 +5,17 @@
         <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>PeekAtChangelog</RootNamespace>
         <PackageId>peek-at-changelog</PackageId>
+        <Description>Allows one to extract the release notes from a changelog, think CHANGELOG.md according to the https://keepachangelog.com format, for a particular version or fallback to the Unreleased notes if none specified. How you compose the changelog is out of scope. What you do with the output of the tool is out of scope.</Description>
         <Authors>Yves Reynhout</Authors>
         <Copyright>BitTacklr 2023</Copyright>
         <RepositoryUrl>https://github.com/BitTacklr/peek-at-changelog</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Company>BitTacklr</Company>
         <Product>PeekAtChangelog</Product>
-        <PackageLicenseUrl>https://github.com/BitTacklr/peek-at-changelog/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IsPackable>true</IsPackable>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>https://github.com/BitTacklr/peek-at-changelog/blob/main/CHANGELOG</PackageReleaseNotes>
+        <PackageReleaseNotes>https://github.com/BitTacklr/peek-at-changelog/blob/main/CHANGELOG.md</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup>
