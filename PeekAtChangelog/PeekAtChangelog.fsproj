@@ -18,6 +18,7 @@
         <PackageReleaseNotes>https://github.com/BitTacklr/peek-at-changelog/blob/main/CHANGELOG.md</PackageReleaseNotes>
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>peek-at-changelog</ToolCommandName>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -28,6 +29,7 @@
     <ItemGroup>
         <Compile Include="ChangelogReleaseNotesSeeker.fs" />
         <Compile Include="Program.fs" />
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>
