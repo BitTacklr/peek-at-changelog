@@ -16,6 +16,8 @@
         <IsPackable>true</IsPackable>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <PackageReleaseNotes>https://github.com/BitTacklr/peek-at-changelog/blob/main/CHANGELOG.md</PackageReleaseNotes>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>peek-at-changelog</ToolCommandName>
     </PropertyGroup>
 
     <PropertyGroup>
