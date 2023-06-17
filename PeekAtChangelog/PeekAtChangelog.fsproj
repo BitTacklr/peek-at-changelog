@@ -4,7 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>PeekAtChangelog</RootNamespace>
-        <PackageId>PeekAtChangelog</PackageId>
+        <PackageId>peek-at-changelog</PackageId>
         <Authors>Yves Reynhout</Authors>
         <Copyright>BitTacklr 2023</Copyright>
         <RepositoryUrl>https://github.com/BitTacklr/peek-at-changelog</RepositoryUrl>

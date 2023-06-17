@@ -16,17 +16,37 @@ module ChangelogReleaseNotesSeekerTests =
 ## Release 1
 
 Changes in release 1
+
+### Added
+
+- Change 1
+- Change 2
+
+### Removed
+
+- Change 3
+- Change 4
+
+## Release 0
 """,
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "release 1"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "release 1"
 
         Assert.Equal(
             Some
-                """
-Changes in release 1
-""",
+                """Changes in release 1
+
+### Added
+
+- Change 1
+- Change 2
+
+### Removed
+
+- Change 3
+- Change 4""",
             result
         )
 
@@ -44,13 +64,11 @@ Working on release 1
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "unreleased"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "unreleased"
 
         Assert.Equal(
             Some
-                """
-Working on release 1
-""",
+                """Working on release 1""",
             result
         )
 
@@ -73,14 +91,11 @@ Changes in release 1
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "release 2"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "release 2"
 
         Assert.Equal(
             Some
-                """
-Changes in release 2
-
-""",
+                """Changes in release 2""",
             result
         )
 
@@ -102,7 +117,7 @@ Changes in release 1
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "release 2"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "release 2"
 
         Assert.Equal(
             None,
@@ -123,14 +138,11 @@ Changes in release 1
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "release 1"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "release 1"
 
         Assert.Equal(
             Some
-                """
-Changes in release 1
-
-""",
+                """Changes in release 1""",
             result
         )
 
@@ -147,6 +159,6 @@ Changes in release 1
                 pipeline
             )
 
-        let result = ChangelogReleaseNotesSeeker.seek document "release 2"
+        let result = ChangelogReleaseNotesSeeker.trySeek document "release 2"
 
         Assert.Equal(None, result)

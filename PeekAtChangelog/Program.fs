@@ -16,7 +16,7 @@ type Arguments =
 
 try
     let parser =
-        ArgumentParser.Create<Arguments>(programName = "dotnet peek-at-changelog")
+        ArgumentParser.Create<Arguments>(programName = "peek-at-changelog")
 
     let parsed =
         parser.ParseCommandLine(Environment.GetCommandLineArgs(), ignoreUnrecognized = true, raiseOnUsage = true)
@@ -38,12 +38,8 @@ try
         let markdown = File.ReadAllText(changelog)
         let document = Markdown.Parse(markdown, pipeline)
 
-        match
-            ChangelogReleaseNotesSeeker.seek document version
-            |> Option.orElse (ChangelogReleaseNotesSeeker.seek document "unreleased")
-        with
-        | Some release_notes -> printfn $"%s{release_notes}"
-        | None -> failwithf $"Could not find release notes for version '%s{version}' in '%s{changelog}'"
+        ChangelogReleaseNotesSeeker.trySeek document version
+        |> Option.iter (fun release_notes -> printfn $"%s{release_notes}")
 
     exit 0
 

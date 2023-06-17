@@ -1,5 +1,6 @@
 namespace PeekAtChangelog
 
+open System
 open System.IO
 open System.Linq
 open Markdig.Renderers.Roundtrip
@@ -26,9 +27,40 @@ module ChangelogReleaseNotesSeeker =
         for release_note in release_notes do
             renderer.Render(release_note) |> ignore
 
-        writer.ToString()
+        let rendered_release_notes = writer.ToString()
+        
+        use reader = new StringReader(rendered_release_notes)
+        let rendered_lines =
+            Seq.unfold
+                (fun (reader: StringReader) ->
+                    let line = reader.ReadLine()
+                    Option.ofObj line
+                    |> Option.map (fun line -> (line, reader))
+                ) reader
+            |> List.ofSeq
+        let first_line_with_content =
+            List.tryFindIndex (fun (line: string) -> line.Length <> 0) rendered_lines
+        let last_line_with_content =
+            List.tryFindIndexBack (fun (line: string) -> line.Length <> 0) rendered_lines
+        let trimmed_lines =
+            List.choose
+                (fun (index, line) ->
+                    let skip =
+                        (match first_line_with_content with
+                        | Some first_line -> index < first_line
+                        | None -> false)
+                        ||
+                        (match last_line_with_content with
+                        | Some last_line -> index > last_line
+                        | None -> false)
+                    if skip then None else Some line
+                )
+                (rendered_lines |> List.mapi (fun index line -> (index, line)))
+                
+        let trimmed_release_notes = String.Join(Environment.NewLine, trimmed_lines)
+        trimmed_release_notes
 
-    let seek (document: MarkdownDocument) (version: string) =
+    let trySeek (document: MarkdownDocument) (version: string) =
         document.Descendants<HeadingBlock>().Where(fun heading -> heading.Level = 2)
         |> Seq.choose (fun block ->
             match Option.ofObj block.Inline with
