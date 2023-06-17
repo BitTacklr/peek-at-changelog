@@ -11,7 +11,7 @@ Install as a [.NET tool](https://learn.microsoft.com/en-us/dotnet/core/tools/glo
 ## Usage
 
 ```
-USAGE: peek-at-changelog [--help] [--version <version>] <path>
+USAGE: peek-at-changelog [--help] [--version <version>] [--fallback] <path>
 
 CHANGELOG:
 
