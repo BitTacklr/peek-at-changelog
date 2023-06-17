@@ -20,6 +20,7 @@ CHANGELOG:
 OPTIONS:
 
     --version <version>   specify the version
+    --fallback            falls back to unreleased version if version not found
     --help                display this list of options.
 ```
 
